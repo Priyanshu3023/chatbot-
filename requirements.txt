@@ -5,3 +5,4 @@ Flask-Cors==4.0.1
 google-api-core==2.24.2
 google-auth==2.38.0
 google-auth-httplib2==0.2.0
+gunicorn==21.2.0
