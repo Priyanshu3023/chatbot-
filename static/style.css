@@ -1,0 +1,197 @@
+/* Reset & Basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0e30c9, #d4d2d5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.container {
+  background: #fff;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #5a2d82;
+  text-shadow: 1px 1px 3px rgba(90, 45, 130, 0.3);
+}
+
+/* Chatbox */
+#chatbox {
+  flex-grow: 1;
+  height: 380px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  border: 1.5px solid #ddd;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  scroll-behavior: smooth;
+  font-size: 1rem;
+  line-height: 1.4;
+  box-shadow: inset 0 0 10px #e0e0e0;
+}
+
+/* Messages */
+.user, .bot {
+  max-width: 75%;
+  padding: 0.8rem 1.2rem;
+  border-radius: 25px;
+  word-wrap: break-word;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  opacity: 0;
+  animation: fadeInUp 0.3s forwards;
+}
+
+.user {
+  background-color: #a6d1ff;
+  color: #003a6f;
+  align-self: flex-end;
+  text-align: right;
+  border-bottom-right-radius: 0;
+}
+
+.bot {
+  background-color: #d2f8d2;
+  color: #276627;
+  align-self: flex-start;
+  text-align: left;
+  border-bottom-left-radius: 0;
+}
+
+/* Animation for messages */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Textarea */
+textarea {
+  resize: none;
+  border-radius: 12px;
+  border: 1.8px solid #ccc;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  min-height: 70px;
+  box-shadow: inset 0 1px 3px #eee;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #5a2d82;
+  box-shadow: 0 0 8px #5a2d82aa;
+}
+
+/* File Upload Label */
+.file-label {
+  display: inline-block;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  color: #5a2d82;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(90,45,130,0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.file-label:hover {
+  background-color: #5a2d82;
+  color: #fff;
+}
+
+/* Display selected file name */
+.file-name {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  color: #555;
+  min-height: 20px;
+  user-select: text;
+}
+
+/* Submit Button */
+button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 0.85rem;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(102,126,234,0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #5a2d82, #4b306a);
+  box-shadow: 0 12px 24px rgba(90,45,130,0.6);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.2rem;
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  #chatbox {
+    height: 300px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}

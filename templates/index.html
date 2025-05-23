@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduBot - AI Chatbot</title>
+
+  <!-- Icons & Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-robot"></i> EduBot</h1>
+    <div id="chatbox" class="chatbox"></div>
+    
+    <form id="chat-form" enctype="multipart/form-data">
+      <textarea id="text-input" name="text" rows="2" placeholder="Type your question..."></textarea>
+      
+      <label for="file-input" class="file-label">
+        <i class="fas fa-paperclip"></i> Upload File
+      </label>
+      <input type="file" id="file-input" accept=".pdf,.jpg,.jpeg,.png" hidden />
+      <div id="file-name" class="file-name"></div>
+      
+      <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
